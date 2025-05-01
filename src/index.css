@@ -1,0 +1,191 @@
+/* h1 {
+  margin: 0;
+}
+
+.roll-game {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  row-gap: 10px;
+}
+
+.input-form {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+  place-items: center;
+  row-gap: 10px;
+
+  input {
+    height: 50px;
+    width: 300px;
+    box-sizing: border-box;
+  }
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  width: 400px;
+  padding: 10px;
+  place-items: center;
+}
+
+.dice {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  padding: 5px;
+  place-items: center;
+  gap: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.top-left {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.top-right {
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+
+.middle-left {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.middle {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.middle-right {
+  grid-row: 2/3;
+  grid-column: 3/4;
+}
+
+.bottom-left {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.bottom-right {
+  grid-row: 3/4;
+  grid-column: 3/4;
+} */
+
+h1 {
+  margin: 0;
+}
+
+.roll-game {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  row-gap: 10px;
+}
+
+.input-form {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+  place-items: center;
+  row-gap: 10px;
+}
+
+.input-form input[type="number"] {
+  height: 50px;
+  width: 300px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 1.2rem;
+}
+
+.input-form input[type="submit"] {
+  height: 50px;
+  width: 150px;
+  background-color: #eee;
+  border: 2px solid #000;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.input-form input[type="submit"]:hover {
+  background-color: #ddd;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  width: 400px;
+  padding: 10px;
+  place-items: center;
+}
+
+.dice {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  padding: 5px;
+  place-items: center;
+  gap: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.top-left {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.top-right {
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+
+.middle-left {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.middle {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.middle-right {
+  grid-row: 2/3;
+  grid-column: 3/4;
+}
+
+.bottom-left {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.bottom-right {
+  grid-row: 3/4;
+  grid-column: 3/4;
+}
