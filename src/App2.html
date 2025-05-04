@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="roll-game">
+    <form id="input-form" class="input-form" novalidate>
+      <h1>Number of Dice</h1>
+      <label for="dice-count" class="visually-hidden">Enter number of dice to roll</label>
+      <input 
+        type="number" 
+        id="dice-count" 
+        name="dice-count" 
+        min="1" 
+        max="100" 
+        required 
+        aria-label="Number of dice"
+      />
+      <input type="submit" value="Roll" />
+    </form>
+    <section id="board" class="board" aria-live="polite"></section>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const form = document.getElementById('input-form');
+      const board = document.getElementById('board');
+      const diceCountInput = document.getElementById('dice-count');
+
+      const dotClasses = {
+        1: ['middle'],
+        2: ['top-right', 'bottom-left'],
+        3: ['top-right', 'bottom-left', 'middle'],
+        4: ['top-left', 'top-right', 'bottom-left', 'bottom-right'],
+        5: ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'middle'],
+        6: ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'middle-left', 'middle-right']
+      };
+
+      function createDieFace(number) {
+        const dice = document.createElement('div');
+        dice.className = 'dice';
+
+        const dots = dotClasses[number] || [];
+        dots.forEach(cls => {
+          const dot = document.createElement('div');
+          dot.className = `dot ${cls}`;
+          dice.appendChild(dot);
+        });
+
+        return dice;
+      }
+
+      function rollDice(count) {
+        board.innerHTML = '';
+        const fragment = document.createDocumentFragment();
+
+        for (let i = 0; i < count; i++) {
+          const roll = Math.floor(Math.random() * 6) + 1;
+          fragment.appendChild(createDieFace(roll));
+        }
+
+        board.appendChild(fragment);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const count = parseInt(diceCountInput.value, 10);
+
+        if (Number.isInteger(count) && count >= 1 && count <= 100) {
+          rollDice(count);
+        } else {
+          alert('Please enter a valid number of dice between 1 and 100.');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
